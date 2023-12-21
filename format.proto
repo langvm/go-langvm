@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+message GenDecl {
+  string name = 1;
+  string type = 2;
+}
+
+message StructType {
+  string name = 1;
+  repeated GenDecl fields = 2;
+}
+
+message InterfaceType {
+  string name = 1;
+  repeated GenDecl methods = 2;
+}
+
+message FuncType {
+  repeated GenDecl params = 1;
+  repeated GenDecl results = 2;
+}
+
+message Header {
+  repeated StructType structTypes = 1;
+  repeated InterfaceType interfaceTypes = 2;
+  repeated TypeAlias typeAliases = 3;
+}
+
+message TypeAlias {
+  string name = 1;
+  string type = 2;
+}
+
+message Template {}
+
+message Macro {}
+
+message FuncImpl {}
+
+message NativeFunc {}
